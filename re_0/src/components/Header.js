@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   Text,
+  Image
 } from 'react-native';
 
 import {Header,Left,Button,Icon,Right,Body,Title} from 'native-base';
@@ -17,11 +18,13 @@ export default class AppHeader extends Component {
        </Button>
        </Left>
        <Body>
-         <Title>Review Eat</Title>
+         <Image
+          source={require('./../img/logo.png')}
+        />
        </Body>
        <Right>
          <Button transparent>
-           <Icon name='bulb' />
+           <Icon name='search' />
          </Button>
        </Right>
      </Header>
