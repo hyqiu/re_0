@@ -19,10 +19,12 @@ import {
   Text
 } from 'react-native';
 
-import {Drawer} from 'native-base';
+import {Drawer, StyleProvider} from 'native-base';
 
 import AppHeader from './components/Header';
 import Sidebar from './components/SideBar';
+import getTheme from '../native-base-theme/components';
+import material from '../native-base-theme/variables/material';
 
 export default class App extends Component {
   closeDrawer = () => {
@@ -33,16 +35,17 @@ export default class App extends Component {
   };
   render() {
     return (
-    <Drawer
-      ref={(ref) => { this.drawer = ref; }}
-      content={<Sidebar/>}
-      onClose={() => this.closeDrawer()} >
+    <StyleProvider style={getTheme(material)}>
+      <Drawer
+        ref={(ref) => { this.drawer = ref; }}
+        content={<Sidebar/>}
+        onClose={() => this.closeDrawer()} >
 
-      <AppHeader
-          openDrawer={this.openDrawer.bind(this)}
-      />
-
+        <AppHeader
+            openDrawer={this.openDrawer.bind(this)}
+        />
       </Drawer>
+    </StyleProvider>
     );
   }
 }
