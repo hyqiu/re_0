@@ -18,7 +18,7 @@ export default class AppHeader extends Component {
        </Button>
        </Left>
        <Body>
-         <Image
+        <Image
           source={require('./../img/logo.png')}
         />
        </Body>
